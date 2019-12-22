@@ -12,7 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTungstenChest> 
 {
-	private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID + ":textures/blocks/tungsten_chest.png");
+	private static final ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID + ":textures/blocks/tungsten_chest_model.png");
 	private final ModelTungstenChest MODEL = new ModelTungstenChest();
 	
 	@Override

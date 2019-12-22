@@ -1,6 +1,8 @@
 package com.Vinyks.Tunco.util.handlers;
 
 import com.Vinyks.Tunco.Main;
+import com.Vinyks.Tunco.blocks.animation.RenderTungstenChest;
+import com.Vinyks.Tunco.blocks.tileentity.TileEntityTungstenChest;
 import com.Vinyks.Tunco.init.ModBlocks;
 import com.Vinyks.Tunco.init.ModItems;
 import com.Vinyks.Tunco.init.ModRecipes;
@@ -11,6 +13,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -25,6 +28,7 @@ public class RegistryHandler
 	{
 		event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
 		TileEntityHandler.registerTileEntities();
+		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTungstenChest.class, new RenderTungstenChest());
 	}
 	
 	
@@ -46,6 +50,9 @@ public class RegistryHandler
 	@SubscribeEvent
 	public static void onModelRegister(ModelRegistryEvent event)
 	{
+		
+		Main.proxy.registerItemRenderer(Item.getItemFromBlock(ModBlocks.TUNGSTEN_CHEST), 0, null);
+		
 		for(Item item : ModItems.ITEMS)
 		{
 			if(item instanceof IHasModel)
