@@ -3,7 +3,9 @@ package com.Vinyks.Tunco.util.handlers;
 import com.Vinyks.Tunco.Main;
 import com.Vinyks.Tunco.init.ModBlocks;
 import com.Vinyks.Tunco.init.ModItems;
+import com.Vinyks.Tunco.init.ModRecipes;
 import com.Vinyks.Tunco.util.IHasModel;
+import com.Vinyks.Tunco.world.ModWorldGen;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -12,6 +14,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @EventBusSubscriber
 public class RegistryHandler 
@@ -65,7 +68,17 @@ public class RegistryHandler
 	{
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 		SoundsHandler.registerSounds();
+		ModRecipes.init();
 	
 	}
+	public static void preInitRegistries()
+	{
+		GameRegistry.registerWorldGenerator(new ModWorldGen(), 3);
+	}
+	public static void postInitRegistries()
+	{
+		
+	}
+
 }
 

@@ -7,14 +7,14 @@ public class Ore extends BlockBase
 
 {
 
-	public Ore(String name, Material material) 
+	public Ore(String name, Material material, float hardness, int harvestLevel) 
 	{
 		super(name, material);
 	
 		setSoundType(SoundType.STONE);
-		setHardness(3.5F);
+		setHardness(hardness);
 		setResistance(15.0F);
-		setHarvestLevel("pickaxe", 2);
+		setHarvestLevel("pickaxe", harvestLevel);
 	}
 
 }
