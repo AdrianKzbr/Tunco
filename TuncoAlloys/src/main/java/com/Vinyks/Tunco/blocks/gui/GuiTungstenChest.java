@@ -24,7 +24,7 @@ public class GuiTungstenChest extends GuiContainer
 		this.playerInventory = playerInventory;
 		this.tm = chestInventory;
 		
-		this.xSize = 174; 
+		this.xSize = 179; 
 		this.ySize = 256;
 	}
 
