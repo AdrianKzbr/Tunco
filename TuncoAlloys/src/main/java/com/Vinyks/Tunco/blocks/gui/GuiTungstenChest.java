@@ -18,11 +18,12 @@ public class GuiTungstenChest extends GuiContainer
 	private final InventoryPlayer playerInventory;
 	private final TileEntityTungstenChest tm;
 	
-	public GuiTungstenChest(InventoryPlayer playerInventory, TileEntityTungstenChest chestInventory, EntityPlayer player)
+	public GuiTungstenChest(InventoryPlayer playerInventory, TileEntityTungstenChest tm, EntityPlayer player)
 	{
-		super(new ContainerTungstenChest(playerInventory, chestInventory, player));
+		super(new ContainerTungstenChest(playerInventory, tm, player));
+		
 		this.playerInventory = playerInventory;
-		this.tm = chestInventory;
+		this.tm = tm;
 		
 		this.xSize = 179; 
 		this.ySize = 256;
@@ -31,8 +32,8 @@ public class GuiTungstenChest extends GuiContainer
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) 
 	{
-		this.fontRenderer.drawString(this.tm.getDisplayName().getFormattedText(), 8, 6, 16086784);
-		this.fontRenderer.drawString(this.playerInventory.getDisplayName().getUnformattedText(),  8, this.ySize - 92, 16086784);
+		this.fontRenderer.drawString(this.tm.getDisplayName().getFormattedText(), 8, 6, 788791);
+		this.fontRenderer.drawString(this.playerInventory.getDisplayName().getUnformattedText(),  8, this.ySize - 92, 788791);
 	}
 	
 	

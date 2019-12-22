@@ -16,6 +16,9 @@ tile.cobalt_tungsten_alloy_block.name=Cobalt Tungsten Alloy Block
 tile.metalmixer_block.name=Metalmixer
 tile.cobalt_ore.name=Cobalt Ore
 tile.tungsten_ore.name=Tungsten Ore
+tile.tungsten_chest.name=Tungsten Chest
+
 
 //Machines
 container.metalmixer_block=Metalmixer
+container.tungsten_chest=Tungsten Chest
