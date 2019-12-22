@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "CCC",
+        "CCC",
+        "CCC"
+    ],
+    
+    "key":
+    {
+        "C":
+        {
+            "item": "ta:cobalt_ingot"
+        }
+    },
+    
+    "result":
+    {
+        "item": "ta:cobalt_block",
+        "count": 1
+    }
+}

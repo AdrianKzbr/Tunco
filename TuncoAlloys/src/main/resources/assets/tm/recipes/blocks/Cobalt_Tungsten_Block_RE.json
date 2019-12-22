@@ -1,0 +1,18 @@
+{ 
+    "type": "minecraft:crafting_shapeless",
+
+    "ingredients": 
+    [
+
+    {
+      "item": "ta:cobalt_tungsten_alloy_block"
+    }
+    
+    ],
+
+    "result": 
+    {
+        "item": "ta:cobalt_tungsten_alloy",
+        "count": 9
+    }
+}

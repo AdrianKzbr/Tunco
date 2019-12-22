@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        " T ",
+        " R ",
+        " R "
+    ],
+    
+    "key":
+    {
+        "T":
+        {
+            "item": "tm:tungsten_ingot"
+        },
+
+
+
+
+        "R":
+        {
+            "item": "tm:iron_rod"
+        }
+    },
+    
+    
+    "result":
+    {
+        "item": "tm:tungsten_spade",
+        "count": 1
+    }
+}

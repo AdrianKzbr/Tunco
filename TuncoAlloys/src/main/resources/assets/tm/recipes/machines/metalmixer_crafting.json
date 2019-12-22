@@ -1,0 +1,34 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "CCC",
+        "T T",
+        "III"
+    ],
+    
+    "key":
+    {
+        "T":
+        {
+            "item": "tm:tungsten_ingot"
+        },
+        
+        "C":
+        {
+            "item": "tm:cobalt_ingot"
+        },
+        
+        "I":
+        {
+            "item": "minecraft:iron_ingot"
+        }
+    },
+    
+    "result":
+    {
+        "item": "tm:tungsten_block",
+        "count": 1
+    }
+}

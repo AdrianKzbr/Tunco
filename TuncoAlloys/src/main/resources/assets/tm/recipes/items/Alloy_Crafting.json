@@ -1,0 +1,22 @@
+{ 
+    "type": "minecraft:crafting_shapeless",
+
+    "ingredients": 
+    [
+
+    {
+      "item": "tm:tungsten_ingot"
+    },
+
+    {
+      "item": "tm:cobalt_ingot"
+    }
+    
+    ],
+
+    "result": 
+    {
+        "item": "tm:cobalt_tungsten_alloy",
+        "count": 1
+    }
+}

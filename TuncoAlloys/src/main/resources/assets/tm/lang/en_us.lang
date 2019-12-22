@@ -1,0 +1,21 @@
+
+//Items
+item.tungsten_ingot.name=Tungsten Ingot
+item.cobalt_ingot.name=Cobalt Ingot
+item.cobalt_tungsten_alloy.name=Cobalt Tungsten Alloy
+item.iron_rod.name=Iron Rod
+item.tungsten_sword.name=Tungsten Sword
+item.tungsten_spade.name=Tungsten Shovel
+item.tungsten_pickaxe.name=Tungsten Pickaxe
+item.tungsten_axe.name=Tungsten Axe
+item.tungsten_hoe.name=TUngsten Hoe
+//Blocks
+tile.tungsten_block.name=Tungsten Block
+tile.cobalt_block.name=Cobalt Block
+tile.cobalt_tungsten_alloy_block.name=Cobalt Tungsten Alloy Block
+tile.metalmixer_block.name=Metalmixer
+tile.cobalt_ore.name=Cobalt Ore
+tile.tungsten_ore.name=Tungsten Ore
+
+//Machines
+container.metalmixer_block=Metalmixer

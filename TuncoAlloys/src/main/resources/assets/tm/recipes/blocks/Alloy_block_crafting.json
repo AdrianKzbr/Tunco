@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "TTT",
+        "TTT",
+        "TTT"
+    ],
+    
+    "key":
+    {
+        "T":
+        {
+            "item": "ta:cobalt_tungsten_alloy"
+        }
+    },
+    
+    "result":
+    {
+        "item": "ta:cobalt_tungsten_alloy_block",
+        "count": 1
+    }
+}
