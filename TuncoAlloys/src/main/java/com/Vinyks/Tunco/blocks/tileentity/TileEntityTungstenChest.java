@@ -25,8 +25,8 @@ public class TileEntityTungstenChest extends TileEntityLockableLoot implements I
 	
 	
 	@Override
-	public int getSizeInventory() {
-		
+	public int getSizeInventory() 
+	{
 		return 72;
 	}
 
@@ -83,7 +83,7 @@ public class TileEntityTungstenChest extends TileEntityLockableLoot implements I
 	@Override
 	public String getGuiID() {
 		
-		return Reference.MOD_ID + "tungsten_chest";
+		return Reference.MOD_ID + ":tungsten_chest";
 	}
 	
 	@Override

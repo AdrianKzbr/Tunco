@@ -3,6 +3,7 @@ package com.Vinyks.Tunco;
 import com.Vinyks.Tunco.init.ModRecipes;
 import com.Vinyks.Tunco.proxy.CommonProxy;
 import com.Vinyks.Tunco.util.Reference;
+import com.Vinyks.Tunco.util.handlers.RegistryHandler;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -31,6 +32,7 @@ public class Main {
 	public static void init(FMLInitializationEvent event)
 	{
 		ModRecipes.init();
+		RegistryHandler.initRegistries();
 	}
 	
 	@EventHandler

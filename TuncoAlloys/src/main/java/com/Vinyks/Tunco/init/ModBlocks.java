@@ -29,5 +29,5 @@ public class ModBlocks
 	
 	public static final Block COBALT_ORE = new Ore("cobalt_ore", Material.IRON);
 	
-	public static final Block TUNGSTEN_CHEST = new BlockTungstenChest("copper_chest");
+	public static final Block TUNGSTEN_CHEST = new BlockTungstenChest("tungsten_chest");
 }
