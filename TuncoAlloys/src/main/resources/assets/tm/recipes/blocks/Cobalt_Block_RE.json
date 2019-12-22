@@ -5,14 +5,14 @@
     [
 
     {
-      "item": "ta:cobalt_block"
+      "item": "tm:cobalt_block"
     }
     
     ],
 
     "result": 
     {
-        "item": "ta:cobalt_ingot",
+        "item": "tm:cobalt_ingot",
         "count": 9
     }
 }

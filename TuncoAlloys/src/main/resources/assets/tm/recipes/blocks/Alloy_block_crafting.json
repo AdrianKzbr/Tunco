@@ -12,13 +12,13 @@
     {
         "T":
         {
-            "item": "ta:cobalt_tungsten_alloy"
+            "item": "tm:cobalt_tungsten_alloy"
         }
     },
     
     "result":
     {
-        "item": "ta:cobalt_tungsten_alloy_block",
+        "item": "tm:cobalt_tungsten_alloy_block",
         "count": 1
     }
 }

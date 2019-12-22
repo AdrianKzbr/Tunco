@@ -5,14 +5,14 @@
     [
 
     {
-      "item": "ta:cobalt_tungsten_alloy_block"
+      "item": "tm:cobalt_tungsten_alloy_block"
     }
     
     ],
 
     "result": 
     {
-        "item": "ta:cobalt_tungsten_alloy",
+        "item": "tm:cobalt_tungsten_alloy",
         "count": 9
     }
 }

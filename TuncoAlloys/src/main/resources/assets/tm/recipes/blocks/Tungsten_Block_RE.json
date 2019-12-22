@@ -5,14 +5,14 @@
     [
 
     {
-      "item": "ta:tungsten_block"
+      "item": "tm:tungsten_block"
     }
     
     ],
 
     "result": 
     {
-        "item": "ta:tungsten_ingot",
+        "item": "tm:tungsten_ingot",
         "count": 9
     }
 }
