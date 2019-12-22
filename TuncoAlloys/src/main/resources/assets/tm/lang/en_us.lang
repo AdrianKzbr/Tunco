@@ -22,3 +22,6 @@ tile.tungsten_chest.name=Tungsten Chest
 //Machines
 container.metalmixer_block=Metalmixer
 container.tungsten_chest=Tungsten Chest
+
+//creativeTabs
+itemGroup.tuncotab=Tunco Mod

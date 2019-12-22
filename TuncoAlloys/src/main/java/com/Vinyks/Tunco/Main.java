@@ -2,9 +2,11 @@ package com.Vinyks.Tunco;
 
 import com.Vinyks.Tunco.init.ModRecipes;
 import com.Vinyks.Tunco.proxy.CommonProxy;
+import com.Vinyks.Tunco.tabs.TuncoTab;
 import com.Vinyks.Tunco.util.Reference;
 import com.Vinyks.Tunco.util.handlers.RegistryHandler;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -15,6 +17,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
 public class Main {
+	
+	public static final CreativeTabs tuncotab = new TuncoTab("tuncotab");
 	
 	@Instance
 	public static Main instance;
@@ -39,4 +43,5 @@ public class Main {
 	{
 		RegistryHandler.postInitRegistries();
 	}
+	
 }
