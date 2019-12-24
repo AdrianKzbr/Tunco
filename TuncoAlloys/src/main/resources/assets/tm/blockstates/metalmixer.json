@@ -1,0 +1,14 @@
+{
+    "variants": 
+    {
+        "burning=false,facing=north": { "model": "tm:metalmixer" },
+        "burning=false,facing=east": { "model": "tm:metalmixer", "y": 90 },
+        "burning=false,facing=south": { "model": "tm:metalmixer", "y": 180 },
+        "burning=false,facing=west": { "model": "tm:metalmixer", "y": 270 },
+        
+        "burning=true,facing=north": { "model": "tm:on_metalmixer"},
+        "burning=true,facing=east": { "model": "tm:on_metalmixer", "y": 90 },
+        "burning=true,facing=south": { "model": "tm:on_metalmixer", "y": 180 },
+        "burning=true,facing=west": { "model": "tm:on_metalmixer", "y": 270 }
+    }
+}

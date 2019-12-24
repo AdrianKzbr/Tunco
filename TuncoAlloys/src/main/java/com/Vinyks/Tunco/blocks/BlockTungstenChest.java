@@ -1,5 +1,7 @@
 package com.Vinyks.Tunco.blocks;
 
+import java.util.Random;
+
 import com.Vinyks.Tunco.Main;
 import com.Vinyks.Tunco.blocks.tileentity.TileEntityTungstenChest;
 import com.Vinyks.Tunco.init.ModBlocks;
@@ -7,11 +9,14 @@ import com.Vinyks.Tunco.init.ModItems;
 import com.Vinyks.Tunco.util.Reference;
 
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -25,7 +30,7 @@ import net.minecraft.world.World;
 
 public class BlockTungstenChest extends BlockContainer {
 
-	
+	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final AxisAlignedBB TUNGSTEN_CHEST_AABB = new AxisAlignedBB(0.9375D, 0.875D, 0.9375D, 0.0625D, 0, 0.0625D);
 	
 	public BlockTungstenChest(String name) {
@@ -37,7 +42,26 @@ public class BlockTungstenChest extends BlockContainer {
 		ModBlocks.BLOCKS.add(this);
 		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
 	}
-
+	
+	@Override
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+	{
+		if(!worldIn.isRemote)
+		{
+			IBlockState north = worldIn.getBlockState(pos.north());
+			IBlockState south = worldIn.getBlockState(pos.south());
+			IBlockState west = worldIn.getBlockState(pos.west());
+			IBlockState east = worldIn.getBlockState(pos.east());
+			EnumFacing face = (EnumFacing)state.getValue(FACING);
+			
+			if(face == EnumFacing.NORTH && north.isFullBlock() && !south.isFullBlock()) face = EnumFacing.SOUTH;
+			else if(face == EnumFacing.SOUTH && south.isFullBlock() && !north.isFullBlock()) face = EnumFacing.NORTH;
+			else if(face == EnumFacing.WEST && west.isFullBlock() && !east.isFullBlock()) face = EnumFacing.EAST;
+			else if(face == EnumFacing.EAST && east.isFullBlock() && !west.isFullBlock()) face = EnumFacing.WEST;
+			worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);
+		}
+	}
+	
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		
@@ -48,6 +72,13 @@ public class BlockTungstenChest extends BlockContainer {
 		
 		return true;
 	}
+	/*
+	@Override
+	public Item getItemDropped(IBlockState state, Random rand, int fortune)
+	{
+		return Item.getItemFromBlock(ModBlocks.TUNGSTEN_CHEST);
+	}
+	*/
 	
 	public void breakBlock(World worldIn, BlockPos pos, IBlockState state) 
 	{

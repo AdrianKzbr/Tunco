@@ -1,0 +1,7 @@
+{
+   "parent": "block/orientable",
+   "textures": 
+   {
+       "particle": "tm:blocks/cobalt_block"
+   }
+}
