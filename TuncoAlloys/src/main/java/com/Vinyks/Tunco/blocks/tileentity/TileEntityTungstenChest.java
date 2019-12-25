@@ -22,7 +22,7 @@ public class TileEntityTungstenChest extends TileEntityLockableLoot implements I
 	private NonNullList<ItemStack> chestContents = NonNullList.<ItemStack>withSize(72, ItemStack.EMPTY);
 	public int numPlayersUsing, ticksSinceSync;
 	public float lidAngle, prevLidAngle;
-	
+	public float direction;
 	
 	@Override
 	public int getSizeInventory() 

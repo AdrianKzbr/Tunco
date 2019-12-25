@@ -48,17 +48,34 @@ public class BlockTungstenChest extends BlockContainer {
 	{
 		if(!worldIn.isRemote)
 		{
-			IBlockState north = worldIn.getBlockState(pos.north());
+			/*IBlockState north = worldIn.getBlockState(pos.north());
 			IBlockState south = worldIn.getBlockState(pos.south());
 			IBlockState west = worldIn.getBlockState(pos.west());
 			IBlockState east = worldIn.getBlockState(pos.east());
 			EnumFacing face = (EnumFacing)state.getValue(FACING);
 			
-			if(face == EnumFacing.NORTH && north.isFullBlock() && !south.isFullBlock()) face = EnumFacing.SOUTH;
-			else if(face == EnumFacing.SOUTH && south.isFullBlock() && !north.isFullBlock()) face = EnumFacing.NORTH;
-			else if(face == EnumFacing.WEST && west.isFullBlock() && !east.isFullBlock()) face = EnumFacing.EAST;
-			else if(face == EnumFacing.EAST && east.isFullBlock() && !west.isFullBlock()) face = EnumFacing.WEST;
-			worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);
+			if(face == EnumFacing.NORTH && north.isFullBlock() && !south.isFullBlock()) 
+			{
+				face = EnumFacing.SOUTH;
+			}
+			else if(face == EnumFacing.SOUTH && south.isFullBlock() && !north.isFullBlock()) 
+			{
+				face = EnumFacing.NORTH;
+			}
+			else if(face == EnumFacing.WEST && west.isFullBlock() && !east.isFullBlock()) 
+			{
+				face = EnumFacing.EAST;
+			}
+			else if(face == EnumFacing.EAST && east.isFullBlock() && !west.isFullBlock()) 
+			{
+				face = EnumFacing.WEST;
+			}
+			worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);*/
+			
+			
+			
+			
+			
 		}
 	}
 	
@@ -87,6 +104,8 @@ public class BlockTungstenChest extends BlockContainer {
 		super.breakBlock(worldIn, pos, state);
 	}
 	
+	
+	
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) 
 	{
@@ -98,6 +117,36 @@ public class BlockTungstenChest extends BlockContainer {
 				((TileEntityTungstenChest)tileentity).setCustomName(stack.getDisplayName());
 			}
 		}
+		TileEntityTungstenChest tile = (TileEntityTungstenChest)worldIn.getTileEntity(pos);
+		System.out.println(placer.rotationYaw);
+		System.out.println(placer.rotationYawHead);
+		tile.direction = 10.0F;
+		if(placer.rotationYawHead>=-45.0F && placer.rotationYawHead<=45.0F)
+		{
+			tile.direction = 180.0F;
+			System.out.println("1");
+		}
+		else if(placer.rotationYawHead>=-135.0F &&  placer.rotationYawHead<=135.0F)
+		{
+			tile.direction = 90.0F;
+			System.out.println("2");
+		}
+		else if(placer.rotationYawHead>=-225.0F && placer.rotationYawHead<=225.0F)
+		{
+			tile.direction = 0.0F;
+			System.out.println("3");
+		}
+		else if(placer.rotationYawHead>=-315.0F && placer.rotationYawHead<=315.0F)
+		{
+			tile.direction = 270.0F;
+			System.out.println("4");
+		}
+		else if(placer.rotationYawHead>=-360.0F && placer.rotationYawHead<=360.0F)
+		{
+			tile.direction = 180.0F;
+			System.out.println("5");
+		}
+		
 	}
 	
 	

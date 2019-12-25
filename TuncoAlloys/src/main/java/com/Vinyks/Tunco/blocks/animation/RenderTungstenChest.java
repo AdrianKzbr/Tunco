@@ -24,6 +24,7 @@ public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTun
        
         ModelTungstenChest model = MODEL;
        
+        
         if (destroyStage >= 0)
         {
             this.bindTexture(DESTROY_STAGES[destroyStage]);
@@ -40,9 +41,18 @@ public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTun
         GlStateManager.translate((float)x, (float)y + 1.0F, (float)z + 1.0F);
         GlStateManager.scale(1.0F, -1.0F, -1.0F);
         GlStateManager.translate(0.5F, 0.5F, 0.5F);
+
         GlStateManager.translate(-0.5F, -0.5F, -0.5F); //verschiebt die gesamte Textur auf x,y,z ebene
         
         
+
+        GlStateManager.translate(-0.5F, -0.5F, -0.5F);
+        
+        TileEntityTungstenChest myTile = (TileEntityTungstenChest) te;
+        float direction = myTile.direction;
+        System.out.println("x " + te.direction);
+        GlStateManager.rotate(direction, 0.0F, 1.0F, 0.0F);
+
         
         float f = te.prevLidAngle + (te.lidAngle - te.prevLidAngle) * partialTicks;
         f = 1.0F - f;
@@ -53,6 +63,7 @@ public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTun
         GlStateManager.disableRescaleNormal();
         GlStateManager.popMatrix();
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+        
  
         if (destroyStage >= 0)
         {
