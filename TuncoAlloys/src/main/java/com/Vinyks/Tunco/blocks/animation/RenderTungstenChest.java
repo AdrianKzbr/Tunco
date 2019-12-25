@@ -41,7 +41,6 @@ public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTun
         GlStateManager.translate((float)x, (float)y + 1.0F, (float)z + 1.0F);
         GlStateManager.scale(1.0F, -1.0F, -1.0F);
         GlStateManager.translate(0.5F, 0.5F, 0.5F);
-
         GlStateManager.translate(-0.5F, -0.5F, -0.5F); //verschiebt die gesamte Textur auf x,y,z ebene
         
         
