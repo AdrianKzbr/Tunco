@@ -1,9 +1,0 @@
-{
-    "variants": 
-    {
-        "facing=north": { "model": "tm:tungsten_chest" },
-        "facing=east": { "model": "tm:tungsten_chest", "y": 90 },
-        "facing=south": { "model": "tm:tungsten_chest", "y": 180 },
-        "facing=west": { "model": "tm:tungsten_chest", "y": 270 }
-    }
-}
