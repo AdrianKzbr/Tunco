@@ -18,20 +18,23 @@ public class GuiTungstenChest extends GuiContainer
 	private final InventoryPlayer playerInventory;
 	private final TileEntityTungstenChest tm;
 	
+	
 	public GuiTungstenChest(InventoryPlayer playerInventory, TileEntityTungstenChest tm, EntityPlayer player)
 	{
-		super(new ContainerTungstenChest(playerInventory, tm, player));
 		
+		super(new ContainerTungstenChest(playerInventory, tm, player));
 		this.playerInventory = playerInventory;
 		this.tm = tm;
 		
 		this.xSize = 179; 
 		this.ySize = 256;
 	}
-
+	
+	
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) 
 	{
+		
 		this.fontRenderer.drawString(this.tm.getDisplayName().getFormattedText(), 8, 6, 788791);
 		this.fontRenderer.drawString(this.playerInventory.getDisplayName().getUnformattedText(),  8, this.ySize - 92, 788791);
 	}
@@ -40,7 +43,9 @@ public class GuiTungstenChest extends GuiContainer
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) 
 	{
+		drawDefaultBackground(); 
 		GlStateManager.color(1.0f, 1.0f, 1.0f);
+		GlStateManager.disableLighting();
 		this.mc.getTextureManager().bindTexture(GUI_CHEST);
 		this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 		
@@ -49,6 +54,7 @@ public class GuiTungstenChest extends GuiContainer
 	@Override
 	public void drawScreen(int mouseX, int mouseY, float partialTicks)
 	{
+		
 		this.drawDefaultBackground();
 		super.drawScreen(mouseX, mouseY, partialTicks);
 		this.renderHoveredToolTip(mouseX, mouseY);
