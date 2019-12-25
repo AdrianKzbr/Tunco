@@ -40,13 +40,12 @@ public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTun
         GlStateManager.enableRescaleNormal();
         GlStateManager.translate((float)x, (float)y + 1.0F, (float)z + 1.0F);
         GlStateManager.scale(1.0F, -1.0F, -1.0F);
-        GlStateManager.translate(0.5F, 0.5F, 0.5F);
-        GlStateManager.translate(-0.5F, -0.5F, -0.5F);
         
-        TileEntityTungstenChest myTile = (TileEntityTungstenChest) te;
-        float direction = myTile.direction;
-        System.out.println("x " + te.direction);
-        GlStateManager.rotate(direction, 0.0F, 1.0F, 0.0F);
+        //offset
+        GlStateManager.translate(te.offSetX, 0.0F, te.offSetZ);
+        
+        //rotation
+        GlStateManager.rotate(te.direction, 0.0F, 1.0F, 0.0F);
         
         float f = te.prevLidAngle + (te.lidAngle - te.prevLidAngle) * partialTicks;
         f = 1.0F - f;
