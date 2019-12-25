@@ -25,6 +25,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -72,10 +73,6 @@ public class BlockTungstenChest extends BlockContainer {
 			}
 			worldIn.setBlockState(pos, state.withProperty(FACING, face), 2);*/
 			
-			
-			
-			
-			
 		}
 	}
 	
@@ -117,36 +114,22 @@ public class BlockTungstenChest extends BlockContainer {
 				((TileEntityTungstenChest)tileentity).setCustomName(stack.getDisplayName());
 			}
 		}
-		TileEntityTungstenChest tile = (TileEntityTungstenChest)worldIn.getTileEntity(pos);
-		System.out.println(placer.rotationYaw);
-		System.out.println(placer.rotationYawHead);
-		tile.direction = 10.0F;
-		if(placer.rotationYawHead>=-45.0F && placer.rotationYawHead<=45.0F)
-		{
-			tile.direction = 180.0F;
-			System.out.println("1");
-		}
-		else if(placer.rotationYawHead>=-135.0F &&  placer.rotationYawHead<=135.0F)
-		{
-			tile.direction = 90.0F;
-			System.out.println("2");
-		}
-		else if(placer.rotationYawHead>=-225.0F && placer.rotationYawHead<=225.0F)
-		{
-			tile.direction = 0.0F;
-			System.out.println("3");
-		}
-		else if(placer.rotationYawHead>=-315.0F && placer.rotationYawHead<=315.0F)
-		{
-			tile.direction = 270.0F;
-			System.out.println("4");
-		}
-		else if(placer.rotationYawHead>=-360.0F && placer.rotationYawHead<=360.0F)
-		{
-			tile.direction = 180.0F;
-			System.out.println("5");
-		}
 		
+		TileEntityTungstenChest tile = (TileEntityTungstenChest)worldIn.getTileEntity(pos);
+		tile.direction = placer.getHorizontalFacing().getHorizontalAngle() + 180.0F;
+		if(placer.getHorizontalFacing().equals(EnumFacing.EAST))
+		{
+			tile.offSetZ = 1.0F;
+		}
+		else if(placer.getHorizontalFacing().equals(EnumFacing.SOUTH))
+		{
+			tile.offSetX = 1.0F;
+			tile.offSetZ = 1.0F;
+		}
+		else if(placer.getHorizontalFacing().equals(EnumFacing.WEST))
+		{
+			tile.offSetX = 1.0F;
+		}
 	}
 	
 	
