@@ -41,6 +41,7 @@ public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTun
         GlStateManager.translate((float)x, (float)y + 1.0F, (float)z + 1.0F);
         GlStateManager.scale(1.0F, -1.0F, -1.0F);
         
+        
         //offset
         GlStateManager.translate(te.offSetX, 0.0F, te.offSetZ);
         
