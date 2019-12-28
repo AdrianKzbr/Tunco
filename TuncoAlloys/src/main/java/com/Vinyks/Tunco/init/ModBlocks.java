@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.Vinyks.Tunco.blocks.BlockBase;
-import com.Vinyks.Tunco.blocks.BlockTungstenChest;
+import com.Vinyks.Tunco.blocks.TungstenChest;
 import com.Vinyks.Tunco.blocks.CobaltBlock;
 import com.Vinyks.Tunco.blocks.CobaltTungstenAlloyBlock;
 import com.Vinyks.Tunco.blocks.Ore;
@@ -27,7 +27,8 @@ public class ModBlocks
 	
 	public static final Block COBALT_ORE = new Ore("cobalt_ore", Material.IRON, 3.0F, 2);
 	
-	public static final Block TUNGSTEN_CHEST = new BlockTungstenChest("tungsten_chest");
+	public static final Block TUNGSTEN_CHEST = new TungstenChest("tungsten_chest");
+	
 	
 	//public static final Block METALMIXER = new BlockMetalMixer("metalmixer_block", Material.IRON);
 }

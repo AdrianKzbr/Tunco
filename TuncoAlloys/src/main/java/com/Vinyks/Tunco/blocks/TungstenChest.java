@@ -1,9 +1,12 @@
 package com.Vinyks.Tunco.blocks;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import com.Vinyks.Tunco.Main;
 import com.Vinyks.Tunco.blocks.tileentity.TileEntityTungstenChest;
+import com.Vinyks.Tunco.blocks.tileentity.ItemStackRenderer.CustomTextureAtlasSprite;
 import com.Vinyks.Tunco.init.ModBlocks;
 import com.Vinyks.Tunco.init.ModItems;
 import com.Vinyks.Tunco.util.Reference;
@@ -13,6 +16,11 @@ import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.BakedQuad;
+import net.minecraft.client.renderer.block.model.IBakedModel;
+import net.minecraft.client.renderer.block.model.ItemOverrideList;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.InventoryHelper;
@@ -29,24 +37,28 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockTungstenChest extends BlockContainer {
+public class TungstenChest extends BlockContainer implements IBakedModel {
 
 	public static final PropertyDirection FACING = BlockHorizontal.FACING;
 	public static final AxisAlignedBB TUNGSTEN_CHEST_AABB = new AxisAlignedBB(0.9375D, 0.875D, 0.9375D, 0.0625D, 0, 0.0625D);
 	
-	public BlockTungstenChest(String name) {
+	public TungstenChest(String name) {
 		super(Material.IRON);
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(Main.tuncotab);
 		
-		ModBlocks.BLOCKS.add(this);
-		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(name));
+        ModBlocks.BLOCKS.add(this);
+		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		//ItemStack stack = new ItemStack(Item.getItemFromBlock(ModBlocks.TUNGSTEN_CHEST));
+        //stack.getItem().setTileEntityItemStackRenderer(com.Vinyks.Tunco.blocks.tileentity.ItemStackRenderer.TileEntityItemStackRendererTungstenChest.instance);
+        
 	}
 	
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
 	{
+		
 		if(!worldIn.isRemote)
 		{
 			/*IBlockState north = worldIn.getBlockState(pos.north());
@@ -168,6 +180,39 @@ public class BlockTungstenChest extends BlockContainer {
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
 	{
 		return TUNGSTEN_CHEST_AABB;
+	}
+
+	@Override
+	public List<BakedQuad> getQuads(IBlockState state, EnumFacing side, long rand) {
+		return Collections.EMPTY_LIST;
+	}
+
+	@Override
+	public boolean isAmbientOcclusion() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isGui3d() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isBuiltInRenderer() {
+		return true;
+	}
+
+	@Override
+	public TextureAtlasSprite getParticleTexture() {
+		CustomTextureAtlasSprite x = new CustomTextureAtlasSprite("123");
+		return x;
+	}
+
+	@Override
+	public ItemOverrideList getOverrides() {
+		return ItemOverrideList.NONE;
 	}
 
 }

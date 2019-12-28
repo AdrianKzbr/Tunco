@@ -1,8 +1,10 @@
 package com.Vinyks.Tunco.util.handlers;
 
 import com.Vinyks.Tunco.Main;
+import com.Vinyks.Tunco.blocks.TungstenChest;
 import com.Vinyks.Tunco.blocks.animation.RenderTungstenChest;
 import com.Vinyks.Tunco.blocks.tileentity.TileEntityTungstenChest;
+import com.Vinyks.Tunco.blocks.tileentity.ItemStackRenderer.TileEntityItemStackRendererTungstenChest;
 import com.Vinyks.Tunco.init.ModBlocks;
 import com.Vinyks.Tunco.init.ModItems;
 import com.Vinyks.Tunco.init.ModRecipes;
@@ -10,7 +12,9 @@ import com.Vinyks.Tunco.util.IHasModel;
 import com.Vinyks.Tunco.world.ModWorldGen;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -29,6 +33,7 @@ public class RegistryHandler
 		event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
 		TileEntityHandler.registerTileEntities();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityTungstenChest.class, new RenderTungstenChest());
+        
 	}
 	
 	
@@ -43,7 +48,6 @@ public class RegistryHandler
 	@SubscribeEvent
 	public static void onBlockRegister(RegistryEvent.Register<Block> event)
 	{
-		event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
 		
 	}
 	
@@ -76,6 +80,7 @@ public class RegistryHandler
 		NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new GuiHandler());
 		SoundsHandler.registerSounds();
 		ModRecipes.init();
+		
 	
 	}
 	public static void preInitRegistries()
