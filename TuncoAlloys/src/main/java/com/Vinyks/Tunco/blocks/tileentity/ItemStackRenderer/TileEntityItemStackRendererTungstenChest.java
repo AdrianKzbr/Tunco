@@ -32,7 +32,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class TileEntityItemStackRendererTungstenChest extends TileEntityItemStackRenderer
 {
-    private final TileEntityTungstenChest tuncoChest = new TileEntityTungstenChest();
+    private final TileEntityTungstenChest tunChest = new TileEntityTungstenChest();
+    public static TileEntityItemStackRendererTungstenChest instance;
 	
     @Override
 	public void renderByItem(ItemStack itemStackIn)
@@ -45,12 +46,12 @@ public class TileEntityItemStackRendererTungstenChest extends TileEntityItemStac
     {
         Item item = p_192838_1_.getItem();
 
-        TileEntityRendererDispatcher.instance.render(this.tuncoChest, 0.0D, 0.0D, 0.0D, 0.0F, partialTicks);
+        TileEntityRendererDispatcher.instance.render(this.tunChest, 0.0D, 0.0D, 0.0D, 0.0F, partialTicks);
     }
 	
     static
     {
 
-        instance = new TileEntityItemStackRenderer();
+        instance = new TileEntityItemStackRendererTungstenChest();
     }
 }
