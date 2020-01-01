@@ -45,12 +45,10 @@ public class RenderTungstenChest extends TileEntitySpecialRenderer<TileEntityTun
         GlStateManager.translate(-0.5F, -0.5F, -0.5F); //verschiebt die gesamte Textur auf x,y,z ebene
 
         
-        
-        //offset
-        GlStateManager.translate(te.offSetX, 0.0F, te.offSetZ);
-        
         //rotation
+        GlStateManager.translate(0.5F, 0.5F, 0.5F);
         GlStateManager.rotate(te.direction, 0.0F, 1.0F, 0.0F);
+        GlStateManager.translate(-0.5F, -0.5F, -0.5F);
         
         float f = te.prevLidAngle + (te.lidAngle - te.prevLidAngle) * partialTicks;
         f = 1.0F - f;

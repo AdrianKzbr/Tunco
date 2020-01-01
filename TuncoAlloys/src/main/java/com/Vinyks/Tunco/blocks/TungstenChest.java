@@ -131,19 +131,6 @@ public class TungstenChest extends BlockContainer implements IBakedModel {
 		
 		TileEntityTungstenChest tile = (TileEntityTungstenChest)worldIn.getTileEntity(pos);
 		tile.direction = placer.getHorizontalFacing().getHorizontalAngle() + 180.0F;
-		if(placer.getHorizontalFacing().equals(EnumFacing.EAST))
-		{
-			tile.offSetZ = 1.0F;
-		}
-		else if(placer.getHorizontalFacing().equals(EnumFacing.SOUTH))
-		{
-			tile.offSetX = 1.0F;
-			tile.offSetZ = 1.0F;
-		}
-		else if(placer.getHorizontalFacing().equals(EnumFacing.WEST))
-		{
-			tile.offSetX = 1.0F;
-		}
 	}
 	
 	
@@ -196,7 +183,7 @@ public class TungstenChest extends BlockContainer implements IBakedModel {
 
 	@Override
 	public boolean isGui3d() {
-		return false;
+		return true;
 	}
 
 	@Override

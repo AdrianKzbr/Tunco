@@ -45,13 +45,17 @@ public class TileEntityItemStackRendererTungstenChest extends TileEntityItemStac
     public void renderByItem(ItemStack p_192838_1_, float partialTicks)
     {
         Item item = p_192838_1_.getItem();
+        GlStateManager.translate(0.5F, 0.5F, 0.5F);
+        GlStateManager.rotate(30.0F, 1.0F, 0.0F, 0.0F);
+        GlStateManager.rotate(45.0F, 0.0F, 1.0F, 0.0F);
+        GlStateManager.scale(0.625F, 0.625F, 0.625F);
+        GlStateManager.translate(-0.5F, -0.5F, -0.5F);
 
         TileEntityRendererDispatcher.instance.render(this.tunChest, 0.0D, 0.0D, 0.0D, 0.0F, partialTicks);
     }
 	
     static
     {
-
         instance = new TileEntityItemStackRendererTungstenChest();
     }
 }

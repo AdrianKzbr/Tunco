@@ -23,8 +23,6 @@ public class TileEntityTungstenChest extends TileEntityLockableLoot implements I
 	public int numPlayersUsing, ticksSinceSync;
 	public float lidAngle, prevLidAngle;
 	public float direction;
-	public float offSetX;
-	public float offSetZ;
 	
 	@Override
 	public int getSizeInventory() 
