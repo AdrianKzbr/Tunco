@@ -1,5 +1,6 @@
 package com.Vinyks.Tunco.proxy;
 
+import com.Vinyks.Tunco.blocks.tileentity.ItemStackRenderer.TileEntityItemStackRendererTungstenChest;
 import com.Vinyks.Tunco.init.ModBlocks;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -12,7 +13,8 @@ public class ClientProxy extends CommonProxy
 	public void registerItemRenderer(Item item, int meta, String id) 
 	{
 		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
-		ItemBlock tc = new ItemBlock(ModBlocks.TUNGSTEN_CHEST);
-		tc.setTileEntityItemStackRenderer(com.Vinyks.Tunco.blocks.tileentity.ItemStackRenderer.TileEntityItemStackRendererTungstenChest.instance);
+		Item.getItemFromBlock(ModBlocks.TUNGSTEN_CHEST).setTileEntityItemStackRenderer(TileEntityItemStackRendererTungstenChest.instance);
+		//ItemBlock tc = new ItemBlock(ModBlocks.TUNGSTEN_CHEST);
+		//tc.setTileEntityItemStackRenderer(com.Vinyks.Tunco.blocks.tileentity.ItemStackRenderer.TileEntityItemStackRendererTungstenChest.instance);
 	}
 }

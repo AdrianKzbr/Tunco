@@ -12,6 +12,7 @@ import com.Vinyks.Tunco.util.IHasModel;
 import com.Vinyks.Tunco.world.ModWorldGen;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -62,6 +63,11 @@ public class RegistryHandler
 			if(item instanceof IHasModel)
 			{
 				((IHasModel)item).registerModels();
+				
+				if(item instanceof IBakedModel)
+				{
+					item.setTileEntityItemStackRenderer(TileEntityItemStackRendererTungstenChest.instance);
+				}
 			}
 		}
 		

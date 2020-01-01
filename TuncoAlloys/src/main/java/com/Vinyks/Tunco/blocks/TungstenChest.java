@@ -111,6 +111,8 @@ public class TungstenChest extends BlockContainer implements IBakedModel {
 		TileEntityTungstenChest tileentity = (TileEntityTungstenChest)worldIn.getTileEntity(pos);
 		InventoryHelper.dropInventoryItems(worldIn, pos, tileentity);
 		super.breakBlock(worldIn, pos, state);
+		
+		
 	}
 	
 	
@@ -189,13 +191,11 @@ public class TungstenChest extends BlockContainer implements IBakedModel {
 
 	@Override
 	public boolean isAmbientOcclusion() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean isGui3d() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

@@ -33,7 +33,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class TileEntityItemStackRendererTungstenChest extends TileEntityItemStackRenderer
 {
     private final TileEntityTungstenChest tuncoChest = new TileEntityTungstenChest();
-	@Override
+	
+    @Override
 	public void renderByItem(ItemStack itemStackIn)
     {
         this.renderByItem(itemStackIn, 1.0F);
